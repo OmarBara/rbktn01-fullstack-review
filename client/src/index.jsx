@@ -16,13 +16,13 @@ class App extends React.Component {
 
   search (term) {
     console.log(`${term} was searched`);
-    // TODO
 
     axios.post(`http://localhost:1128/repos`, { "Data":term })
-      // .then(res => {
-      // //  console.log('res');
-      //  // console.log(res.data);
-      // })
+    .then(function (response) {
+      repos.push(response)
+      console.log(response)
+    })
+
     }
   render () {
     return (<div>
